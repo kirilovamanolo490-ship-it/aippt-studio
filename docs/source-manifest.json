@@ -1,0 +1,722 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-15",
+  "scope": "Python runtime and Node execution source, byte-identical to local working tree at publication",
+  "files": [
+    {
+      "path": "aippt-studio/src/aippt_studio/__init__.py",
+      "sha256": "cb8b89b8c137a132aad84a3577b6914a825847775e7347b3ed947486ee78dd4c",
+      "bytes": 67
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/__main__.py",
+      "sha256": "311cca56c8b457d6237214cc2a7ae9717b02eedbe5aff5106606b0d9798f0d6d",
+      "bytes": 30
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapter_contracts.py",
+      "sha256": "e62dac78cfb033f2433551cc5f1b03e1e8951aa8605afd84d8b09fc63d3c7afe",
+      "bytes": 6169
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/__init__.py",
+      "sha256": "fb3e503b0737bee52307c9e74f9b0cbfef3b1279fecaaf4810c86cfd00d68d27",
+      "bytes": 7411
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/base.py",
+      "sha256": "ac3933fb63c4e749ea490348f9b1282c06418c3d871d1b39e4e9df40ee95b9c0",
+      "bytes": 12241
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/native.py",
+      "sha256": "2cf8a9ce0bb2d175946a48c9305bfafdad78b49f7a13723d8a7f8433b0658f56",
+      "bytes": 1199
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/rebuild.py",
+      "sha256": "c9c1e67008b385362983ca9894af81a490a25a4502b3c1b80fb22e05744b153e",
+      "bytes": 857
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/registry.py",
+      "sha256": "9717de1a07fdaba004bef69ff89fb45c707e4f56cb0bd2b1d7b04392e0ecfe84",
+      "bytes": 2305
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/template.py",
+      "sha256": "a66d4edd0d4e4be0913f6a3ddaeeeea9371a367d0eeaae29f8a8d9539df7b185",
+      "bytes": 3071
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/adapters/visual.py",
+      "sha256": "9f7deb970d53f3d1080a2cd0c086de92d41170d94ea62aa58beb0cd11a79193e",
+      "bytes": 828
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/animation_edit.py",
+      "sha256": "103a035cd9d707c39f1bc41de7681ca2a33ea652f6b3deeb5d6553828b8a4377",
+      "bytes": 22315
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/assets/__init__.py",
+      "sha256": "1743cc1f69d1732ab01d9287b5f23c22733ed6cbc50b65524c465cf3b593c0fe",
+      "bytes": 786
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/assets/acquisition.py",
+      "sha256": "221ac209c4a4f32ab13154ec69f9ceebcdf3ecf47eef6877222c89f8f461fdc8",
+      "bytes": 17789
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/assets/commons.py",
+      "sha256": "32538064efa6bfe88d0581fe4f2ec63afa28c2d61a0e9b5f338bdbded3496599",
+      "bytes": 12882
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/assets/licenses.py",
+      "sha256": "34b8c952aa2da3abdd3d52c4884ab75e5598af046bf8f7835758c48a9d5b55b7",
+      "bytes": 322
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/assets/registry.py",
+      "sha256": "8c61200f5b6f93662c283b8e76eb94efb54709bc21a8c64d2910f0a7c89a26c8",
+      "bytes": 2939
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/authoring_policy.py",
+      "sha256": "138009c642fd18401f220aec26c5fe7f5f6fec311bec3d354f8c0a74c5547294",
+      "bytes": 18388
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/cli.py",
+      "sha256": "d9de91e1ec6c41696c51a0bcdd5b49673974a781c9bd452a398d1cf3df7a336e",
+      "bytes": 112340
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/config.py",
+      "sha256": "696010b00a35c9f85eade4d861e2cf10b57ace57e0f85ec0753ef8c9c7f159f0",
+      "bytes": 577
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/context_intelligence.py",
+      "sha256": "69baebf1d9b44b9c5583a92c622557860ae8dcd9362e99d917fd78341c2ea880",
+      "bytes": 39981
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/conversations.py",
+      "sha256": "cd8f57876109c394efbc6a901422650009d8ed99b132c10660497e155174566d",
+      "bytes": 55466
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/core_evolution.py",
+      "sha256": "e7b87043ac8c095a0c378a9f4c492d72e479b9ce8898f2fb45e75fb5ed1c3285",
+      "bytes": 30286
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/core_patch.py",
+      "sha256": "4024357b58d55624d9f2e89a34e9fb8b28ff095c776c40a65fcac4801bda68ee",
+      "bytes": 41582
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/current_revision.py",
+      "sha256": "ba96788fd5a96395580caeaaaf34a17f0361585e3889110caf24ed238961a068",
+      "bytes": 10108
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/delivery_artifacts.py",
+      "sha256": "620b972573a6c8f240c1261d33b358b1ad6da2cbf3ce3c7db9e4641d18188e9c",
+      "bytes": 3273
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/design_context.py",
+      "sha256": "46abdbcbf4834bf00cc54ae25c36d65c961e89c5332e96df067301487b31d672",
+      "bytes": 11068
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/design_plan.py",
+      "sha256": "5e4c66c01d0ea89ba920406df3b24624242526a583f83756a4ab6ed8c828d6e9",
+      "bytes": 13167
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/edits.py",
+      "sha256": "df0b1ce8221cb80e833974735f0db919072108320305279ebcef518aa5dce4c9",
+      "bytes": 7536
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/evolution.py",
+      "sha256": "a6617abee029deda97756f90dfab704f6d9e433f0a3ff036de451c1edaa03441",
+      "bytes": 41896
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/expression_patterns.py",
+      "sha256": "2f9fa70d6aa52ea87920cdb710738b38af00819fe9dc9efe37ab60723b25093b",
+      "bytes": 5553
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/expression_review.py",
+      "sha256": "5aab1e6dcdaf82bc483c1eb3adb1f349f71630fc19868c47c468380a66e27e90",
+      "bytes": 30911
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/extraction.py",
+      "sha256": "f674a7d6b9095a6e29e119c3ea5b251d92cf0f3e53efcdf7b5448593720eb0c8",
+      "bytes": 17114
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/fast_revision.py",
+      "sha256": "5020935b3b1895da497f501257a3823aeb6b6cf1c7b01fd22b595c3515ae7237",
+      "bytes": 6662
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/feedback_audit.py",
+      "sha256": "737c852a16b455de6e768b29c8e13d9ef7be97f8645d1afe871966e8f94850b3",
+      "bytes": 26841
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/form_quality_profile.py",
+      "sha256": "7719a0211089185914e0b7bce8d3ca1f59a450ce7a1ccf8c0697930de548b845",
+      "bytes": 8195
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/gaojie_layouts.py",
+      "sha256": "a5740d097673d4dfc6939022073d5e4b26441a609e0a0b6743d58df904855aac",
+      "bytes": 36315
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/host_nudge.py",
+      "sha256": "2aad7f987101fdba633376d0258ffa832605086767fd8cd70a9ae2d5dc2c1b1a",
+      "bytes": 9538
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/html_deck.py",
+      "sha256": "1c8a4516a3cb79ade1f281b36c109fa9886f587623506fc8f8e42d7523ecaa24",
+      "bytes": 32271
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/hybrid_job.py",
+      "sha256": "b45f4472a9528c1b9a2086eadf8d946bd7e56eee55caa6f36e4a26be8efec472",
+      "bytes": 18444
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/hybrid_notes.py",
+      "sha256": "c9418b0562cf2d44ee97fd172903751e45837dfb8b36ef7fc6c1b20da5fe8df7",
+      "bytes": 15058
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/image_preflight.py",
+      "sha256": "6dfda2a7b769569cd7571b59b841a3c83751ca23e7bf44e8626cf320b1265ebf",
+      "bytes": 16913
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/ingest.py",
+      "sha256": "afe88a51c8be384674fb5bf96773a3918c5e795dbe7504ce1e85337952f70cea",
+      "bytes": 16347
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/knowledge.py",
+      "sha256": "a57a79e15aa02b54fcb4b9afaa0c4fab436b22ca6d8cf982f725affb03dba89d",
+      "bytes": 21784
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/learning.py",
+      "sha256": "ec7d35ea02e983fd1f177e6bcaff32549bc1d3986279d2ec3fafe4d0fc27b538",
+      "bytes": 10521
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/lesson_application.py",
+      "sha256": "76eefddd69964bfb593594853088dde550f68b8b9472d980240dc86777494b56",
+      "bytes": 4287
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_assets.py",
+      "sha256": "47670064da5aa54253edbd1c63a6d91a78f330cb88d9a8de0b2bc0be3fd492cc",
+      "bytes": 21683
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_depth.py",
+      "sha256": "fd375a5a018cb9432f1e28dc25864bc7a7d805f1543e62ca468f7cb9583cb029",
+      "bytes": 37539
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_naming.py",
+      "sha256": "2a8dc334df81c9d38f028ec2f4345dd42a0c175471bc8313bc0a99cf95846b48",
+      "bytes": 33000
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_read_guard.py",
+      "sha256": "b0ee228f1f1d73dc54bce905462ba0486b13bb5aad43ba26566f734e8b7e14ff",
+      "bytes": 511
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_reorganization.py",
+      "sha256": "ac3042925d37a8dc3551a33baa847f17d33c8ce31b45eba7ba180e9296975a99",
+      "bytes": 26337
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_retrieval.py",
+      "sha256": "6a6868ca8dc753e43ada41e1fd6fb446c690b90203a817d304589aca18fef739",
+      "bytes": 50697
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/library_reuse_gate.py",
+      "sha256": "b6e9eb08cfe143d5d79e663e0bfd497de12996c8ac9cc8c83cf4b74df1a5e14e",
+      "bytes": 7473
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/local_preview.py",
+      "sha256": "2f01e727899bfdaa0b76ff43f9ad61ed56226c90340c8e3a059fa4b2cff0fbbb",
+      "bytes": 8353
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/local_preview_officecli.py",
+      "sha256": "a21d38e25752a79fd7c878e0caa7ba4b1c5a35638c8c8c156d0c4e0523156813",
+      "bytes": 9120
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mac_native.py",
+      "sha256": "5996568151fe5eca1d45dc3b727af4d173769942eddeedc347db0246362a143f",
+      "bytes": 4290
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mac_powerpoint.py",
+      "sha256": "44deab26fafd27628079e7e4e3dca8702dbc46fdc0d03382d94fbfd4ed58c0fd",
+      "bytes": 12669
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mac_quick_mp4.py",
+      "sha256": "f77c3041ad6c746f2b71d0580e7ce66e2731dd4f2199a5985b9c5740e35168d2",
+      "bytes": 5337
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mac_quick_pdf.py",
+      "sha256": "a4ff7b560b573f119332209846ae06208df817892e800491b315ed549a238db9",
+      "bytes": 3009
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mac_quick_png.py",
+      "sha256": "c4efe87d0f3e18c97c3ffca1caf82b1186eef0d2858ae814ce2d41ec535ee4b3",
+      "bytes": 7041
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mac_video.py",
+      "sha256": "e169208c0fdf6be97d3e7312d1dbea7fdf7b83d105ed25cd853179dde4796ba9",
+      "bytes": 9263
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/maintenance.py",
+      "sha256": "584377f742c129d4fe4db2b5d2a8c72e3255a6da106e9655096d782c06669bed",
+      "bytes": 30114
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/mastering.py",
+      "sha256": "f8433981e8164ac36d3f445ddf7ee3e9edbf10cbdc786b0a0ae45193c48a4543",
+      "bytes": 13403
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/media_inspect.py",
+      "sha256": "62e70ec4166d5b08f2f9a0ea75bac7b3707dcf1e9d3675ff76d72453c2f8d063",
+      "bytes": 3560
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/models.py",
+      "sha256": "1c0526515ecebc6ac410040700f7f415a56b46b4aa6757aa04b836e0bc951a6b",
+      "bytes": 21774
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/motion.py",
+      "sha256": "0fb5c601ad4307ec3dbd5e9c4d699533967a955b092fd359e72970d724c182a3",
+      "bytes": 6282
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/motion_clone.py",
+      "sha256": "30f81729272e8be9e6635be2ebb60b6fac88ba11e0d283ec8f5185543ac714a7",
+      "bytes": 32105
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/motion_library.py",
+      "sha256": "1eb7e80f8525708585ae2e85edd69d1f2922dd1050dff8fc47741f88809b625a",
+      "bytes": 31300
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/motion_search.py",
+      "sha256": "aefa322a149f265666fc4427dc3f3f6960180c138f0ac213231308be6f0f41ee",
+      "bytes": 13310
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/native_compat.py",
+      "sha256": "bf8eb7e6d8b53e26081c6c8ae1d1f10ba53465796b3940d6c6f4b794f1c959e7",
+      "bytes": 7197
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/native_powerpoint.py",
+      "sha256": "d381896ab2d8de8277e6b9335ec4af3b4d6d5996894b4d76b6a06085fe8f1f3f",
+      "bytes": 28274
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/native_scene.py",
+      "sha256": "9cb124e5f511d580ec4f7b71fc4b3e39aaeeb656e7bb3a8be3889129b378a77b",
+      "bytes": 17204
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/notes.py",
+      "sha256": "f27a07e3d4f18b89ea4a2c75bb67040b6ff745bf3e355fa8152583dd9b08f853",
+      "bytes": 5797
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/output_preflight.py",
+      "sha256": "081fe8edc9a4c7710a2884d2422a90a4e048974c64a0b68d236fac9bb70f3c69",
+      "bytes": 14300
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/participation.py",
+      "sha256": "18e3ce59b115431348efde06d6a0a7d616f5147599fb73ad0f6b2b7d0d56e6a1",
+      "bytes": 7104
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/planner.py",
+      "sha256": "51c992a4c17c0f052aa327a6f70413f4f8d431879932b6fcbb32364b1771cff7",
+      "bytes": 42522
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/planning/__init__.py",
+      "sha256": "47a417fd4409af8ce41ca0a3458cb7e988ae863c7d5da9cceb0d88dd5c8a358d",
+      "bytes": 1065
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/planning/base.py",
+      "sha256": "bccef49751b80cf51d668ba395d18c7770ebf7f2065b16e8801f0082324e8cbb",
+      "bytes": 798
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/planning/forms.py",
+      "sha256": "141e60ac8e7af24e6d987cebee069f018ab64ded966d16bc96251b56d7ca9395",
+      "bytes": 4741
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/planning/general.py",
+      "sha256": "4169ba325f7b58f6308ae0bb5d97f3e9b2a5f618d8f43b678396d14f5309d664",
+      "bytes": 788
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/planning/leadership.py",
+      "sha256": "940d4fa11a74249e5e8ec48458052cdb44c49ee1d9c45dac9266390411442255",
+      "bytes": 966
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/platform_runtime.py",
+      "sha256": "58a7c9c7ab1b64fb435195310370f42522d295108ba629fc65777c4303e5c3ac",
+      "bytes": 19623
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/portable_contracts.py",
+      "sha256": "20da7d6240945345a5e038a1818dc4468a7d79e8e6405c6139f659d8ae5c8019",
+      "bytes": 19315
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/portable_packets.py",
+      "sha256": "e7dd40608257cb9e77368103b1c73546c2fa3cf2e127e3f851eb420de4305210",
+      "bytes": 152484
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/portable_safety.py",
+      "sha256": "1a1b4d7001a5fb26b16663f66b9390130792ea854addb7009a5ec77ef28c8a12",
+      "bytes": 98312
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/portfolio_examples.py",
+      "sha256": "757eff85da96aad4ea2a55a954e3a9d4eccac67d18631d5d70c64e25497fa8fb",
+      "bytes": 7393
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/pptx_edit.py",
+      "sha256": "9a6665d7a58b9df6c63faafa69ebfe2fc683b67886bcb50147a9f205d14fbb29",
+      "bytes": 45673
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/pptx_file_ops.py",
+      "sha256": "1da09dedae3ee15398ca5257376e3b258a687edfdd3e7d894c2d3c5a39f48420",
+      "bytes": 4114
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/presentation_intent.py",
+      "sha256": "6eafb6bdefe35360cf8c613b885bbee35f08e6fbb71d2c471f94653c8cd46844",
+      "bytes": 34347
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/presentation_quality.py",
+      "sha256": "6e87537bad0c8c4e38e6ad7d6e361057ffda0c22d48c6a1a8ce6dc6dd295de83",
+      "bytes": 43951
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/project_learning.py",
+      "sha256": "8442501b94d2fc28ce237dc3a35af7eb7799f90d9816bb49407b3691ae93fca2",
+      "bytes": 159507
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/project_repair.py",
+      "sha256": "e082b674341033e68b707f320ba73b2ca3d2a13bd1f8530877150539affca898",
+      "bytes": 18438
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/python_runtime.py",
+      "sha256": "fc66eeba7942d734f9d321c44a48200d5f9ebd7d30e6af1e150b32e4ddf34ffe",
+      "bytes": 7552
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/qa_dedup.py",
+      "sha256": "05cee610e115ecb75a4f75ebca204492c1d45073a0b3b464b5e12f5e5a3871b7",
+      "bytes": 17195
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/quick_nudge.py",
+      "sha256": "0d7f59d38afaab19a272fb8a6350baad19af2796789df7dd3cc6025aaf7aa64d",
+      "bytes": 4279
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/reconcile.py",
+      "sha256": "130423dfc7112f55c29c5a7a1b7a3d2c1a4579ce0c8c3aab164b38d975d5b185",
+      "bytes": 13568
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/renderer.py",
+      "sha256": "8381a6185bf8edb74a465901b7750c55193bf164e1459820852f40c4ef49c060",
+      "bytes": 11450
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/repair_context.py",
+      "sha256": "9d3b44299351bb6ca705070c3d7de0c77daf7d5fa6bb45f1a3dcacc435e8251f",
+      "bytes": 16395
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/review_server.py",
+      "sha256": "76e2a90e4cf70c2faaf25687fe5beb1670b0fed32317de176c64443234d00295",
+      "bytes": 5422
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/revision_qa.py",
+      "sha256": "135085df84b6d36a1cc93d329bc51fa93bd033f67afeccbeeb76e8f5f0d4d534",
+      "bytes": 14430
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/routing.py",
+      "sha256": "c0dcc2ddfbc8e38abd9f3c10f8edf78df2dd12a8c708a06bcf01ad1617209fad",
+      "bytes": 2748
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/runtime.py",
+      "sha256": "ecdaa5b02d4261ff4a4525bc3403dae52d56d1f9c9574a48e7409bcd2bedae89",
+      "bytes": 8298
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/source_semantics.py",
+      "sha256": "27de1e27b1c2740b63ca8245bd8bf56fdba6799f59ce17f0d1227a50c78d54ab",
+      "bytes": 16499
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/storage.py",
+      "sha256": "3d529ddd6cc04875f1aebf203c03724ca7d40d5a0c27d3174ce59e497bd6bb8f",
+      "bytes": 4288
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/storage_audit.py",
+      "sha256": "3a6cb41fecaa99bfca6d245b5f781cfb48b2e31efa5041c5397bf21971d62512",
+      "bytes": 18646
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/style_hybrid_ooxml.py",
+      "sha256": "eb7d690673a8a39a62f2409dacfc9967e3f794e5d102119d8c6c8703f0664ed8",
+      "bytes": 28819
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/style_hybrid_workflow.py",
+      "sha256": "152ff6a53aea72f7fd3b56be8538c92c4a14c996c1041eef401aaf87e7a9decf",
+      "bytes": 49815
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/style_library.py",
+      "sha256": "96dc7433227308fc9dfd2a77b86bd31ede8871f28561435f493f03d3adf76c4b",
+      "bytes": 21789
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/style_page_match.py",
+      "sha256": "646d36e96be83d72de0ff679b7922d338e15b7996dc69467bec6ec340d97d677",
+      "bytes": 35340
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/style_profiles.py",
+      "sha256": "6d37e7f0184d919555ff206fe09818b697dde144463e7035ecc6906dda481a05",
+      "bytes": 12335
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/style_search.py",
+      "sha256": "d82bc82dcc9de6275804c1b75e4ae808e67f415306d93d83eb4a551c6c3d2dac",
+      "bytes": 30800
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/support.py",
+      "sha256": "8ab8791eb1a634c42d84e07e3d1bd1fbe8e6e8b457dba0d6306b4eca5975bbc8",
+      "bytes": 4948
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/template_content_replace.py",
+      "sha256": "16c6ebbef9c9513bd2f3249b468dad0f39d60ffade3d2849460948d8a9d93550",
+      "bytes": 29125
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/template_contract.py",
+      "sha256": "a0ec92cabe2f918bbc9fb245a00fd6fb1450c8df364cbe6f9afbd6b0cc55f543",
+      "bytes": 4254
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/template_designs.py",
+      "sha256": "fa5b810211d5e6fc29b868f9241d895d0244e361c5473c205b1c62cd5df4108d",
+      "bytes": 16701
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/template_library.py",
+      "sha256": "81d2f24254025536ff54fcec4b32dc4016c98f70ae5943e3475a025b00309d46",
+      "bytes": 17744
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/template_selection.py",
+      "sha256": "0222ee3739942cf7f4e0c4383b6280f5befaf577ac04acc22ee444902d284857",
+      "bytes": 18728
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/template_verification.py",
+      "sha256": "41c2dfeec7267d875ab64e9a0b0db0e5a422e8a61d3cd22fcaef218388b2057c",
+      "bytes": 15281
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/tool_evidence.py",
+      "sha256": "758244836347ca23b723b2f34e8cd833ba1a8c962392cabed864f3fc949dde9e",
+      "bytes": 15604
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/upstream_services.py",
+      "sha256": "37ecf77ea7c74a8170a8deab84c28d05fb09cc3cde55062956ac0b2f088fc15e",
+      "bytes": 6257
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/upstream_tools.py",
+      "sha256": "f1b3de0150f80a4797caad0e597df29f43da023c59a437d63125b06d5997526c",
+      "bytes": 35670
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/upstreams.py",
+      "sha256": "ee9cb34914fc29e09e12115fc7f4e3baef72a65dfa0b1974e55da7cfa6e67257",
+      "bytes": 3806
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/visual_diff.py",
+      "sha256": "26ffc599820987ce0f46532379dea03b260f3c0793b097f197f486528371cf40",
+      "bytes": 12262
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/visual_system.py",
+      "sha256": "6f044c188a9a9fcc7a2a8d2596e42e610403ed220df77683abe218c55ca1f54a",
+      "bytes": 10130
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/web/index.html",
+      "sha256": "946cec334b27084798fab6396ab9cb60da108b986fe92351f3e25e9c6600fde3",
+      "bytes": 7923
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/work_corpus.py",
+      "sha256": "e9b62610981ace6635f848bb53f659d2a96a303e5a70a7e902171ef55131b137",
+      "bytes": 46822
+    },
+    {
+      "path": "aippt-studio/src/aippt_studio/workflow.py",
+      "sha256": "829a5b5c85fa64239845260ac02b6805be349bad8c0d1d03bd07db7bd4f69430",
+      "bytes": 132079
+    },
+    {
+      "path": "aippt-studio/node/author-native.cjs",
+      "sha256": "3220739eb299fc566be53bfa942fb063a24a006ba0b2583b09d82c717590b774",
+      "bytes": 8825
+    },
+    {
+      "path": "aippt-studio/node/browser-paths.json",
+      "sha256": "57665212023cdea8fd3f0c70759634934325ebb35db5c240006481403b3f54de",
+      "bytes": 601
+    },
+    {
+      "path": "aippt-studio/node/browser.mjs",
+      "sha256": "9c06667a11c74a645446162559a546c6fffd0560dc8c715dd1877a208d4773db",
+      "bytes": 3583
+    },
+    {
+      "path": "aippt-studio/node/html-image-geometry.mjs",
+      "sha256": "1e4cf3fdd21c5cda0b01d4e06142dd2f11feb5b00c5455d9c8fa2aa19e982e37",
+      "bytes": 4186
+    },
+    {
+      "path": "aippt-studio/node/image-geometry.cjs",
+      "sha256": "55fe105dfa59d609001146f13b92a5149dea3c084f5d259e1884c59b472f584d",
+      "bytes": 15972
+    },
+    {
+      "path": "aippt-studio/node/inspect-media.cjs",
+      "sha256": "b0138f9667203b0ce962d9d71e2ee946f23a6b3a96abe7cfbdd7f505813dd1b5",
+      "bytes": 1894
+    },
+    {
+      "path": "aippt-studio/node/motion-sample.cjs",
+      "sha256": "be5c3833ea877a211f3d5c45001d26c297bc0714ecbb07d8d2e02fafccd55ce7",
+      "bytes": 777
+    },
+    {
+      "path": "aippt-studio/node/preview-slide.mjs",
+      "sha256": "e1873f207683dabf5ae8fdca4cb83bb4abc04769a0242561bc47fc57f98f32c7",
+      "bytes": 2315
+    },
+    {
+      "path": "aippt-studio/node/render-assignment.mjs",
+      "sha256": "3e703b73c46bd2cc2f37bde81f9b2ebceaf5357ab1e06955d664f28a79bc7db3",
+      "bytes": 9989
+    },
+    {
+      "path": "aippt-studio/node/render.mjs",
+      "sha256": "9bde8e4a6f9c34a2e54b1b08fe8a91c6ffddfa8c53e854305cfeeb0865208e63",
+      "bytes": 16904
+    },
+    {
+      "path": "aippt-studio/node/support.mjs",
+      "sha256": "5239a798cf6e8a75827190c1b5765fe465e312274eb3726b65a65ab9fbabe1bc",
+      "bytes": 998
+    },
+    {
+      "path": "aippt-studio/node/template_adapter.mjs",
+      "sha256": "b9a2513656fcb66f542073b4ce27821d3d2b3f95b5dee978a34eefe2f1743201",
+      "bytes": 3382
+    },
+    {
+      "path": "aippt-studio/node/vendor/pixelmatch/LICENSE",
+      "sha256": "cfec0482fb785fe27e3b368a2d9e84bf7a61b275e83ec582bf288e98cd530bb0",
+      "bytes": 738
+    },
+    {
+      "path": "aippt-studio/node/vendor/pixelmatch/index.js",
+      "sha256": "52c6026c4916a07548d4ce55090ec4ed918d353e15095406dabc3a8a5135d788",
+      "bytes": 12015
+    },
+    {
+      "path": "aippt-studio/node/vendor/pixelmatch/package.json",
+      "sha256": "609158e6c5fbc237939fa3ddf7faab80ab690bdc0c8d584414a885130103c4e8",
+      "bytes": 42
+    },
+    {
+      "path": "aippt-studio/node/vendor/pixelmatch/provenance.json",
+      "sha256": "d8b6bc88afd155adaf5d21f955849b29573a4bbdb1849cebbd9f165ccd437506",
+      "bytes": 1108
+    },
+    {
+      "path": "aippt-studio/node/visual-diff.mjs",
+      "sha256": "9d449e30f57c32164a95c275139e36dc26f8bac0c77db8cd3ad354f24ce68d60",
+      "bytes": 4548
+    }
+  ]
+}

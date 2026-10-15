@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aippt-studio:schema:aippt-presentation-intent:v1",
+  "title": "AIPPT presentation intent v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "intent_id",
+    "created_at",
+    "source_revision",
+    "operation",
+    "presentation_form",
+    "audience",
+    "occasion",
+    "source_boundary",
+    "scope",
+    "page_messages",
+    "capability_limits"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aippt-presentation-intent-v1"
+    },
+    "intent_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "revision",
+        "state",
+        "evidence"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "description": "Opaque host document identifier; never a local path."
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "description": "Opaque host revision identifier or unavailable marker."
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "unavailable"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "observed",
+                  "unavailable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "operation": {
+      "enum": [
+        "exact_local_revision",
+        "template_derivative",
+        "new_composition",
+        "faithful_reconstruction",
+        "visual_alternate"
+      ]
+    },
+    "presentation_form": {
+      "enum": [
+        "formal_government",
+        "business_report",
+        "competition_defense",
+        "academic_defense",
+        "teaching",
+        "technical_explanation",
+        "ceremonial_narrative",
+        "premium_portfolio",
+        "other_or_unspecified"
+      ]
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "occasion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "source_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authoritative_material",
+        "may_add_external_material",
+        "external_material_authorization"
+      ],
+      "properties": {
+        "authoritative_material": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "may_add_external_material": {
+          "type": "boolean"
+        },
+        "external_material_authorization": {
+          "enum": [
+            "authorized",
+            "not_authorized",
+            "not_applicable",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_slides",
+        "preserve",
+        "unknowns",
+        "preservation_basis"
+      ],
+      "properties": {
+        "target_slides": {
+          "type": "array",
+          "maxItems": 512,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "preserve": {
+          "type": "array",
+          "maxItems": 512,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "preservation_basis": {
+          "enum": [
+            "current_request",
+            "active_presentation",
+            "provided_reference",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "page_messages": {
+      "type": "array",
+      "maxItems": 512,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "page",
+          "message",
+          "evidence_role",
+          "neighbor_logic"
+        ],
+        "properties": {
+          "page": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "evidence_role": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "neighbor_logic": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "capability_limits": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 512
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "sample-title-motion",
+  "operations": [
+    {
+      "id": "title-text",
+      "action": "set",
+      "target": "/slide[1]/shape[@id=7]",
+      "properties": {
+        "text": "云帆智造 2026 上半年经营汇报",
+        "font.ea": "Microsoft YaHei",
+        "size": "44pt"
+      }
+    },
+    {
+      "id": "title-entrance",
+      "action": "add",
+      "target": "/slide[1]/shape[@id=7]",
+      "element": "animation",
+      "properties": {
+        "effect": "fade",
+        "class": "entrance",
+        "duration": 500,
+        "trigger": "onClick"
+      }
+    },
+    {
+      "id": "slide-transition",
+      "action": "set",
+      "target": "/slide[1]",
+      "properties": {
+        "transition": "fade-slow",
+        "advanceClick": true
+      }
+    }
+  ]
+}

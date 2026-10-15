@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aippt-studio:schema:aippt-handoff-bundle:v1",
+  "title": "AIPPT self-contained manual handoff bundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "bundle_id",
+    "created_at",
+    "source_surface",
+    "claim_provenance",
+    "source_revision",
+    "transfer_scope",
+    "packet",
+    "presentation_intent",
+    "capability_report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aippt-handoff-bundle-v1"
+    },
+    "bundle_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_surface": {
+      "const": "chatgpt-powerpoint"
+    },
+    "source_revision": {
+      "$ref": "aippt-presentation-intent-v1.schema.json#/properties/source_revision"
+    },
+    "transfer_scope": {
+      "$ref": "aippt-learning-packet-v1.schema.json#/properties/transfer_scope"
+    },
+    "packet": {
+      "$ref": "aippt-learning-packet-v1.schema.json"
+    },
+    "presentation_intent": {
+      "$ref": "aippt-presentation-intent-v1.schema.json"
+    },
+    "expression_review": {
+      "$ref": "aippt-expression-review-v1.schema.json"
+    },
+    "capability_report": {
+      "$ref": "aippt-bridge-capabilities-v1.schema.json"
+    },
+    "claim_provenance": {
+      "const": "source_report_unverified"
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "packet": {
+          "required": [
+            "capability_report_ref"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet": {
+            "required": [
+              "expression_review_ref"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "expression_review"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "expression_review"
+          ]
+        }
+      }
+    }
+  ]
+}

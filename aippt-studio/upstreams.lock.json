@@ -1,0 +1,883 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-02T06:31:30.502723+00:00",
+  "workspace_root": "../github",
+  "policy": {
+    "updates": "manual_only",
+    "pending_snapshot_is_usable": false,
+    "source_policy": "Read-only complete shallow Git checkouts; Studio adapters, runtime dependencies and task output remain outside github/.",
+    "package_managed_dependencies": "Runtime versions are independent of source checkout HEAD and governed by package-lock.json, uv.lock and extensions/package-lock.json.",
+    "public_distribution": "Source and version catalog only; local installations and acceptance receipts are not distributed."
+  },
+  "upstreams": [
+    {
+      "id": "GSAP",
+      "directory": "GSAP",
+      "source_url": "https://github.com/greensock/GSAP",
+      "default_branch": "master",
+      "commit_sha": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+      "remote_head_at_lock": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+      "integration": "motion_reference",
+      "role": "Evaluated easing/timing data; not a PPTX object-animation exporter.",
+      "license": {
+        "spdx": "LicenseRef-GSAP-Standard",
+        "github_metadata_spdx": "NOASSERTION",
+        "evidence": "package.json and README.md",
+        "caveat": "Custom GSAP standard license; not described as MIT."
+      },
+      "invocation": {
+        "mode": "studio_tool",
+        "studio_command": "upstream-call GSAP timeline",
+        "entrypoints": [
+          "package.json",
+          "dist/gsap.js"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call GSAP search",
+          "upstream-call GSAP read"
+        ]
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/GSAP"
+      }
+    },
+    {
+      "id": "lxgw-wenkai-gb",
+      "source_url": "https://github.com/lxgw/LxgwWenkaiGB",
+      "default_branch": "main",
+      "commit_sha": "6ceaf966f41aec8cae1e865167acc2bb7b5ae368",
+      "remote_head_at_lock": "6ceaf966f41aec8cae1e865167acc2bb7b5ae368",
+      "license": {
+        "spdx": "OFL-1.1",
+        "evidence": "OFL.txt",
+        "caveat": "Observe Reserved Font Name and additional-permission text in OFL.txt.",
+        "github_metadata_spdx": "OFL-1.1",
+        "evidence_sha256": "a8aa32c38a3402ba4e40fb6d39c913300dd4a0336290dce5c14e3a2f9308d092"
+      },
+      "role": "Copies upstream font binaries and OFL into the Work; no global font installation.",
+      "integration": "font_asset",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "LxgwWenkaiGB",
+      "invocation": {
+        "mode": "studio_tool",
+        "studio_command": "upstream-call lxgw-wenkai-gb font",
+        "entrypoints": [
+          "OFL.txt",
+          "fonts"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call lxgw-wenkai-gb search",
+          "upstream-call lxgw-wenkai-gb read"
+        ]
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/LxgwWenkaiGB"
+      }
+    },
+    {
+      "id": "officecli",
+      "source_url": "https://github.com/iOfficeAI/OfficeCLI",
+      "default_branch": "main",
+      "commit_sha": "7d8f777a34cef4e409ef6ca4cc22c532fc49ee07",
+      "remote_head_at_lock": "7d8f777a34cef4e409ef6ca4cc22c532fc49ee07",
+      "license": {
+        "spdx": "Apache-2.0",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "Apache-2.0",
+        "evidence_sha256": "7e282402a5a6db33995fe638bb3fe79013f9884d8f7d15a42e481c1e86aadda1"
+      },
+      "role": "PPTX inspection, rendering, validation and structural repair support independent of PowerPoint COM.",
+      "integration": "core_qa",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "OfficeCLI",
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "doctor / inspect / common QA",
+        "entrypoints": [
+          "README.md"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call officecli search",
+          "upstream-call officecli read"
+        ]
+      },
+      "runtime": {
+        "kind": "binary",
+        "version": "1.0.147",
+        "path": ".tools/officecli (Mac) or .tools/officecli.exe (Windows)",
+        "note": "Source checkout is not an installed binary update."
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/OfficeCLI"
+      }
+    },
+    {
+      "id": "pptagent",
+      "source_url": "https://github.com/icip-cas/PPTAgent",
+      "default_branch": "main",
+      "commit_sha": "2419d30b134a71486523e95ded60b32489fd3c61",
+      "remote_head_at_lock": "2419d30b134a71486523e95ded60b32489fd3c61",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "e1faa9265adfb5feb24c4be691b5c39b559dec4f0414d9ec3a1157cf94faaf8b"
+      },
+      "role": "Stateful template/slide MCP tools via Work-local runtime copy; requires isolated dependencies and model configuration, live generation not yet verified.",
+      "integration": "reference_only",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "PPTAgent",
+      "invocation": {
+        "mode": "configured_mcp_tool",
+        "studio_command": "upstream-call pptagent mcp-session",
+        "entrypoints": [
+          "pyproject.toml",
+          "docker-compose.yml"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call pptagent search",
+          "upstream-call pptagent read"
+        ]
+      },
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "PptxGenJS",
+      "directory": "PptxGenJS",
+      "source_url": "https://github.com/gitbrent/PptxGenJS",
+      "default_branch": "master",
+      "commit_sha": "3c9ec1b687c174952166f6a34b5e87ebf69fa469",
+      "remote_head_at_lock": "3c9ec1b687c174952166f6a34b5e87ebf69fa469",
+      "integration": "package_support",
+      "role": "Editable scene authoring and formal native prototype/full build through isolated Studio runtime.",
+      "license": {
+        "spdx": "MIT",
+        "github_metadata_spdx": "MIT",
+        "evidence": "LICENSE",
+        "evidence_sha256": "7a2bfe96150786ed1908b8e63f98ebab88875c1e79e28faff6649e0f11f77e52"
+      },
+      "invocation": {
+        "mode": "studio_native_scene",
+        "studio_command": "native-scene JOB --request SCENE.json",
+        "entrypoints": [
+          "dist/pptxgen.cjs.js"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call PptxGenJS search",
+          "upstream-call PptxGenJS read"
+        ]
+      },
+      "runtime": {
+        "kind": "npm",
+        "package": "pptxgenjs",
+        "version": "4.0.1",
+        "lock_file": "package-lock.json"
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/PptxGenJS"
+      }
+    },
+    {
+      "id": "presenton",
+      "source_url": "https://github.com/presenton/presenton",
+      "default_branch": "main",
+      "commit_sha": "66c7ff25f3ba303f6b7aa608ba39760db7788c71",
+      "remote_head_at_lock": "66c7ff25f3ba303f6b7aa608ba39760db7788c71",
+      "license": {
+        "spdx": "Apache-2.0",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "Apache-2.0",
+        "evidence_sha256": "23d6fd64bfcbd46b331098ed89454717fd1719faccbf632f8234b962aa43ed1a"
+      },
+      "role": "Configured service candidate generation; live model service not yet verified.",
+      "integration": "reference_only",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "Presenton",
+      "invocation": {
+        "mode": "configured_service_tool",
+        "studio_command": "upstream-call presenton generate",
+        "entrypoints": [
+          "docker-compose.yml",
+          "servers/fastapi/pyproject.toml"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call presenton search",
+          "upstream-call presenton read"
+        ]
+      },
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "academic-pptx-skill",
+      "source_url": "https://github.com/Gabberflast/academic-pptx-skill",
+      "default_branch": "main",
+      "commit_sha": "9f2b703ffe8d1449851617665ab1ffb3516d54ac",
+      "remote_head_at_lock": "9f2b703ffe8d1449851617665ab1ffb3516d54ac",
+      "license": {
+        "spdx": "NOASSERTION",
+        "evidence": "LICENSE (MIT) and SKILL.md frontmatter (Proprietary, references LICENSE.txt)",
+        "caveat": "The license declarations still conflict; retained for evaluation, not automatic integration.",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "20d9c009d0e5d7150da5e081c8d5a81463731dcf338323992a74a0648e6fb542"
+      },
+      "role": "Excluded evaluation source retained locally only for provenance.",
+      "integration": "excluded",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "academic-pptx-skill",
+      "invocation": {
+        "mode": "catalog_only",
+        "studio_command": null,
+        "entrypoints": [
+          "SKILL.md",
+          "LICENSE"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call academic-pptx-skill search",
+          "upstream-call academic-pptx-skill read"
+        ]
+      },
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "awesome-ai-ppt",
+      "source_url": "https://github.com/ningzimu/awesome-ai-ppt",
+      "default_branch": "main",
+      "commit_sha": "39b36dfd52bb734c2077e307a755e775ab57f1df",
+      "remote_head_at_lock": "39b36dfd52bb734c2077e307a755e775ab57f1df",
+      "license": {
+        "spdx": "CC0-1.0",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "NOASSERTION",
+        "evidence_sha256": "0b60dc2be05ec842e1df8cfd186715c42a92b635a5931b680d5188ad957e9c3e"
+      },
+      "role": "Technology radar and discovery reference; listed projects are not implicitly approved or integrated.",
+      "integration": "reference_only",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "awesome-ai-ppt",
+      "invocation": {
+        "mode": "catalog_only",
+        "studio_command": null,
+        "entrypoints": [
+          "README.md"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call awesome-ai-ppt search",
+          "upstream-call awesome-ai-ppt read"
+        ]
+      },
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "codex-ppt-skill",
+      "source_url": "https://github.com/ningzimu/codex-ppt-skill",
+      "default_branch": "main",
+      "commit_sha": "445b1780c85cec72da7a2c87b80a1d7cbaf726ee",
+      "remote_head_at_lock": "445b1780c85cec72da7a2c87b80a1d7cbaf726ee",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "68e435621ab299c7cbe3ad8f088e877f9bca76508c621f27a697606df8ff2154"
+      },
+      "role": "Optional image-first high-visual deck workflow; outputs must be labeled non-editable/image-based unless reconstructed separately.",
+      "integration": "optional_visual_route",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "image/codex-ppt-skill",
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "visual route (image_based)",
+        "entrypoints": [
+          "skills/codex-ppt/scripts/assemble_ppt.py"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call codex-ppt-skill search",
+          "upstream-call codex-ppt-skill read"
+        ]
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/image/codex-ppt-skill"
+      }
+    },
+    {
+      "id": "dom-to-pptx",
+      "source_url": "https://github.com/atharva9167j/dom-to-pptx",
+      "default_branch": "master",
+      "commit_sha": "939ef79f00db8f9f5f4f75b590e83e380abce197",
+      "remote_head_at_lock": "939ef79f00db8f9f5f4f75b590e83e380abce197",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "03e47f0d43133a09b8e91ca80eeb50fd8cd94620cf1f59712163909b0ec9b182"
+      },
+      "role": "Primary editable HTML/CSS-to-PPTX renderer and native motion reference; runtime package remains pinned separately.",
+      "integration": "primary_renderer",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "dom-to-pptx",
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "native route",
+        "entrypoints": [
+          "package.json"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call dom-to-pptx search",
+          "upstream-call dom-to-pptx read"
+        ]
+      },
+      "runtime": {
+        "kind": "npm",
+        "package": "dom-to-pptx",
+        "version": "2.0.3",
+        "lock_file": "package-lock.json",
+        "lock_sha256": "e74b7bf245980ffa1c2dd96f283fc58aa6d5b0940033f7863683cb46908292e1",
+        "reviewed_commit": "4afbca1f620f1c0d9e94d2ca1ea6631b113aa646",
+        "note": "Runtime source review is independent of refreshed reference checkout."
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/dom-to-pptx"
+      }
+    },
+    {
+      "id": "echarts",
+      "directory": "echarts",
+      "source_url": "https://github.com/apache/echarts",
+      "default_branch": "master",
+      "commit_sha": "62e3373dc1afcce0643d13059c43583ca275fd56",
+      "remote_head_at_lock": "62e3373dc1afcce0643d13059c43583ca275fd56",
+      "integration": "chart_support",
+      "role": "ECharts data options to SVG chart through Studio support chart.",
+      "license": {
+        "spdx": "Apache-2.0",
+        "github_metadata_spdx": "Apache-2.0",
+        "evidence": "LICENSE",
+        "evidence_sha256": "634293835b43a6dd2094fa39182a3d9a6b9ca43b7fdb9ac354e8037af2a3093a"
+      },
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "support chart INPUT --output WORKSPACE/chart.svg",
+        "entrypoints": [
+          "package.json"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call echarts search",
+          "upstream-call echarts read"
+        ]
+      },
+      "runtime": {
+        "kind": "npm_isolated",
+        "package": "echarts",
+        "version": "6.1.0",
+        "lock_file": "extensions/package-lock.json"
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/echarts"
+      }
+    },
+    {
+      "id": "editable-leadership-pptx",
+      "source_url": "https://github.com/CamelKing1997/editable-leadership-pptx",
+      "default_branch": "main",
+      "commit_sha": "392d4043f63c38aaae748fbeea34ae563d114925",
+      "remote_head_at_lock": "392d4043f63c38aaae748fbeea34ae563d114925",
+      "license": {
+        "spdx": "Apache-2.0",
+        "evidence": "LICENSE.txt",
+        "github_metadata_spdx": "Apache-2.0",
+        "evidence_sha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b"
+      },
+      "role": "Original layout helpers inspect normalized PptxGenJS objects; decision references enter planning.",
+      "integration": "strategy_reference",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "editable-leadership-pptx",
+      "invocation": {
+        "mode": "studio_validation_helper",
+        "studio_command": "native-scene / upstream-call PptxGenJS author",
+        "entrypoints": [
+          "SKILL.md"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call editable-leadership-pptx search",
+          "upstream-call editable-leadership-pptx read"
+        ]
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/editable-leadership-pptx"
+      }
+    },
+    {
+      "id": "iconify-icon-sets",
+      "source_url": "https://github.com/iconify/icon-sets",
+      "default_branch": "master",
+      "commit_sha": "b91a0d48b331b0fead8edb259c973c7faa269552",
+      "remote_head_at_lock": "b91a0d48b331b0fead8edb259c973c7faa269552",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "package.json and collections.json",
+        "caveat": "MIT covers the package; every icon set has independent collection license/attribution metadata.",
+        "github_metadata_spdx": "NOASSERTION"
+      },
+      "role": "Exact collection icon extraction with per-collection license; asset-import binds results to a slide.",
+      "integration": "asset_catalog",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "icon-sets",
+      "invocation": {
+        "mode": "studio_tool",
+        "studio_command": "upstream-call iconify-icon-sets icon",
+        "entrypoints": [
+          "collections.json",
+          "json"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call iconify-icon-sets search",
+          "upstream-call iconify-icon-sets read"
+        ]
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/icon-sets"
+      }
+    },
+    {
+      "id": "image-to-editable-ppt-skill",
+      "source_url": "https://github.com/ningzimu/image-to-editable-ppt-skill",
+      "default_branch": "main",
+      "commit_sha": "b7be494e31a0ed56ef98716891db5474606b8cdf",
+      "remote_head_at_lock": "b7be494e31a0ed56ef98716891db5474606b8cdf",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "68e435621ab299c7cbe3ad8f088e877f9bca76508c621f27a697606df8ff2154"
+      },
+      "role": "1:1 editable reconstruction route for screenshots, scans and image-only presentations.",
+      "integration": "reconstruction_route",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "image/image-to-editable-ppt-skill",
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "rebuild route (prepare/resume/finalized import)",
+        "entrypoints": [
+          "skills/image-to-editable-ppt/cli/editppt/cli.py"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call image-to-editable-ppt-skill search",
+          "upstream-call image-to-editable-ppt-skill read"
+        ]
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/image/image-to-editable-ppt-skill"
+      }
+    },
+    {
+      "id": "markitdown",
+      "directory": "markitdown",
+      "source_url": "https://github.com/microsoft/markitdown",
+      "default_branch": "main",
+      "commit_sha": "2b61a335a4bec721144498fe425a61f23e9e3d6e",
+      "remote_head_at_lock": "2b61a335a4bec721144498fe425a61f23e9e3d6e",
+      "integration": "ingestion_support",
+      "role": "Executes checked-out conversion code with Studio Python dependencies; local files only.",
+      "license": {
+        "spdx": "MIT",
+        "github_metadata_spdx": "MIT",
+        "evidence": "LICENSE",
+        "evidence_sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      },
+      "invocation": {
+        "mode": "studio_tool",
+        "studio_command": "upstream-call markitdown convert",
+        "entrypoints": [
+          "packages/markitdown/src/markitdown/__main__.py"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call markitdown search",
+          "upstream-call markitdown read"
+        ]
+      },
+      "runtime": {
+        "kind": "python",
+        "package": "markitdown",
+        "version": "0.1.7",
+        "lock_file": "uv.lock"
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/markitdown"
+      }
+    },
+    {
+      "id": "mermaid-cli",
+      "directory": "mermaid-cli",
+      "source_url": "https://github.com/mermaid-js/mermaid-cli",
+      "default_branch": "master",
+      "commit_sha": "f416ac5c6e42edd3a8be6d512c1008520d0c2f97",
+      "remote_head_at_lock": "f416ac5c6e42edd3a8be6d512c1008520d0c2f97",
+      "integration": "diagram_support",
+      "role": "Mermaid text to SVG diagram through Studio support diagram.",
+      "license": {
+        "spdx": "MIT",
+        "github_metadata_spdx": "MIT",
+        "evidence": "LICENSE",
+        "evidence_sha256": "97f7515292671682e698b9e35b8431b096ee4357c3ccdbf8694d979b73ba94e6"
+      },
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "support diagram INPUT --output WORKSPACE/diagram.svg",
+        "entrypoints": [
+          "src/cli.js"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call mermaid-cli search",
+          "upstream-call mermaid-cli read"
+        ]
+      },
+      "runtime": {
+        "kind": "npm_isolated",
+        "package": "@mermaid-js/mermaid-cli",
+        "version": "11.17.0",
+        "lock_file": "extensions/package-lock.json"
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/mermaid-cli"
+      }
+    },
+    {
+      "id": "motion-canvas",
+      "directory": "motion-canvas",
+      "source_url": "https://github.com/motion-canvas/motion-canvas",
+      "default_branch": "main",
+      "commit_sha": "7b91435c301d530351dcf5ebb91dd139c002e405",
+      "remote_head_at_lock": "7b91435c301d530351dcf5ebb91dd139c002e405",
+      "integration": "motion_reference",
+      "role": "Programmatic explainer video; isolated build/runtime required.",
+      "license": {
+        "spdx": "MIT",
+        "github_metadata_spdx": "MIT",
+        "evidence": "LICENSE",
+        "evidence_sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e"
+      },
+      "invocation": {
+        "mode": "catalog_only",
+        "studio_command": null,
+        "entrypoints": [
+          "package.json"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call motion-canvas search",
+          "upstream-call motion-canvas read"
+        ]
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "ppt-master",
+      "source_url": "https://github.com/hugohe3/ppt-master",
+      "default_branch": "main",
+      "commit_sha": "44c10ed0bc3a9e1df7a25aa179ae7c26db09469b",
+      "remote_head_at_lock": "44c10ed0bc3a9e1df7a25aa179ae7c26db09469b",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "80cefc234c1ec12a8cece4344f16300c634fa03df7891686fcf979e3828f0921"
+      },
+      "role": "Locked native OOXML source readers in normal PPTX ingestion and case search, plus SVG authoring and native motion contracts.",
+      "integration": "source_semantics_and_svg_authoring",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "ppt-master",
+      "invocation": {
+        "mode": "studio_tool",
+        "studio_command": "upstream-call ppt-master svg-deck",
+        "entrypoints": [
+          "skills/ppt-master/scripts/svg_to_pptx.py",
+          "skills/ppt-master/scripts/source_to_md/pdf_to_md.py",
+          "skills/ppt-master/scripts/pptx_ooxml/analyzer.py"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call ppt-master search",
+          "upstream-call ppt-master read"
+        ],
+        "automatic_consumers": [
+          "PPTX ingestion -> source_semantics.analyze_source_semantics",
+          "case indexing -> extract_pptx_structure -> chart/table/SmartArt search text"
+        ]
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/ppt-master"
+      }
+    },
+    {
+      "id": "pptx-automizer",
+      "source_url": "https://github.com/singerla/pptx-automizer",
+      "default_branch": "main",
+      "commit_sha": "fd3fe0ae94ba7f58a28f60e8edc1e94514c5f367",
+      "remote_head_at_lock": "fd3fe0ae94ba7f58a28f60e8edc1e94514c5f367",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "github_metadata_spdx": "MIT",
+        "evidence_sha256": "85bcdef6d2692b8dc4e0acc048abede91e667a68f3bd5e8933b1e55d23069d9e"
+      },
+      "role": "Native client-template reuse, named-object replacement, layout cloning and master preservation.",
+      "integration": "template_route",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "pptx-automizer",
+      "invocation": {
+        "mode": "studio_adapter",
+        "studio_command": "template route",
+        "entrypoints": [
+          "package.json"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call pptx-automizer search",
+          "upstream-call pptx-automizer read"
+        ]
+      },
+      "runtime": {
+        "kind": "npm",
+        "package": "pptx-automizer",
+        "version": "0.8.2",
+        "lock_file": "package-lock.json",
+        "lock_sha256": "e74b7bf245980ffa1c2dd96f283fc58aa6d5b0940033f7863683cb46908292e1",
+        "reviewed_commit": "6466d43abc6a9410b10b801d3aa1b510cc128446",
+        "note": "Runtime source review is independent of refreshed reference checkout."
+      },
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/pptx-automizer"
+      }
+    },
+    {
+      "id": "remotion",
+      "directory": "remotion",
+      "source_url": "https://github.com/remotion-dev/remotion",
+      "default_branch": "main",
+      "commit_sha": "5a93463ea0df9ddf5cf04ff706a1f406f985a961",
+      "remote_head_at_lock": "5a93463ea0df9ddf5cf04ff706a1f406f985a961",
+      "integration": "video_reference",
+      "role": "React video engine; optional separate video renderer, not a PPTX authoring route.",
+      "license": {
+        "spdx": "LicenseRef-Remotion",
+        "github_metadata_spdx": "NOASSERTION",
+        "evidence": "LICENSE.md",
+        "evidence_sha256": "bd65083b940f61904f6ef298aade918a7cad72a3e35bc406e36fab365844b673",
+        "caveat": "Custom license with eligibility terms; not automatically enabled for commercial video production."
+      },
+      "invocation": {
+        "mode": "catalog_only",
+        "studio_command": null,
+        "entrypoints": [
+          "package.json",
+          "LICENSE.md"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call remotion search",
+          "upstream-call remotion read"
+        ]
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "remotion-bits",
+      "directory": "remotion-bits",
+      "source_url": "https://github.com/av/remotion-bits",
+      "default_branch": "master",
+      "commit_sha": "6c71169aa061f15313fadbdc6e29a3a3a87f2c03",
+      "remote_head_at_lock": "6c71169aa061f15313fadbdc6e29a3a3a87f2c03",
+      "integration": "motion_reference",
+      "role": "Ready-made Remotion components; consumes an isolated Remotion project.",
+      "license": {
+        "spdx": "MIT",
+        "github_metadata_spdx": "NOASSERTION",
+        "evidence": "package.json",
+        "caveat": "Package declares MIT; use also depends on the separately licensed Remotion runtime."
+      },
+      "invocation": {
+        "mode": "catalog_only",
+        "studio_command": null,
+        "entrypoints": [
+          "package.json",
+          "skills/remotion-bits/SKILL.md"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call remotion-bits search",
+          "upstream-call remotion-bits read"
+        ]
+      },
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "smiley-sans",
+      "source_url": "https://github.com/atelier-anchor/smiley-sans",
+      "default_branch": "main",
+      "commit_sha": "cbf2ce4a27933855e400f693265ef890fb60f21d",
+      "remote_head_at_lock": "cbf2ce4a27933855e400f693265ef890fb60f21d",
+      "license": {
+        "spdx": "OFL-1.1",
+        "evidence": "LICENSE",
+        "caveat": "Observe the Reserved Font Name terms.",
+        "github_metadata_spdx": "OFL-1.1",
+        "evidence_sha256": "9401f4050f1b66c26b6ccdc8b0e14a3c1cc37aac122eda84386f25854a9bec72"
+      },
+      "role": "Resource access available; checkout has font sources, no ready font binaries.",
+      "integration": "font_asset",
+      "update_strategy": "Refresh explicitly; re-verify source tree and license; run affected adapter fixtures before promoting a source-executed version. Package runtime upgrades use their own locks.",
+      "directory": "smiley-sans",
+      "invocation": {
+        "mode": "source_resource",
+        "studio_command": "upstream-call smiley-sans search",
+        "entrypoints": [
+          "LICENSE",
+          "README.md"
+        ],
+        "source_policy": "read_only; dependencies/caches/build outputs belong to Studio or the active Work",
+        "resource_commands": [
+          "upstream-call smiley-sans search",
+          "upstream-call smiley-sans read"
+        ]
+      },
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "source-han-sans",
+      "source_url": "https://github.com/adobe-fonts/source-han-sans",
+      "default_branch": "master",
+      "commit_sha": "0b993716f6910f0c8e00f957c767ab3cf5cb7602",
+      "remote_head_at_lock": "0b993716f6910f0c8e00f957c767ab3cf5cb7602",
+      "license": {
+        "spdx": "OFL-1.1",
+        "evidence": "upstream LICENSE.txt",
+        "caveat": "Observe the Reserved Font Name terms."
+      },
+      "role": "Preferred open Chinese sans-serif font family when an installed compatible face is available.",
+      "integration": "font_asset",
+      "update_strategy": "Acquire a specific upstream release/commit, verify font binaries and OFL files, then replace pending_snapshot with the verified local path.",
+      "lifecycle": "retired",
+      "retirement": {
+        "reason": "No active PPT production consumer; optional service/video/font source or excluded discovery reference.",
+        "restore_guidance": "Reacquire source_url at commit_sha; verify license and actual Studio consumer before reactivation. The former Work 62 archive was deleted at the user request on 2026-10-02.",
+        "disposition": "deleted_by_user_request"
+      }
+    },
+    {
+      "id": "mediabunny",
+      "directory": "mediabunny",
+      "source_url": "https://github.com/Vanilagy/mediabunny",
+      "default_branch": "main",
+      "commit_sha": "0f91fe768e7ee42703f15e2b8845551b0f1028b3",
+      "remote_head_at_lock": "0f91fe768e7ee42703f15e2b8845551b0f1028b3",
+      "integration": "media_inspection",
+      "role": "Local media container/packet inspection; no model, no full decode or semantic synchronization claim.",
+      "license": {
+        "spdx": "MPL-2.0",
+        "evidence": "LICENSE",
+        "evidence_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+      },
+      "invocation": {
+        "mode": "studio_tool",
+        "studio_command": "upstream-call mediabunny inspect",
+        "entrypoints": [
+          "src/input.ts",
+          "src/input-track.ts",
+          "package.json"
+        ],
+        "source_policy": "read_only; installed runtime and all output remain outside github",
+        "resource_commands": [
+          "upstream-call mediabunny search",
+          "upstream-call mediabunny read"
+        ]
+      },
+      "runtime": {
+        "package": "mediabunny",
+        "version": "1.55.7",
+        "lock": ".tools/media-inspect-runtime/package-lock.json"
+      },
+      "update_strategy": "Explicit source/package updates only; rerun media fixtures before adoption.",
+      "acquisition": {
+        "status": "not_bundled",
+        "local_path": "../github/mediabunny"
+      }
+    }
+  ]
+}

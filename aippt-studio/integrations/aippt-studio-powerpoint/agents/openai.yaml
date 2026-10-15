@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI PPT Studio for PowerPoint"
+  short_description: "Source-led PPT redesign, creation, visuals, and review"
+  default_prompt: "Use $aippt-studio-powerpoint to redesign my supplied PPT or create a new deck from my materials. Choose the presentation style, visual sources, and whole-page review from my audience and occasion."
+
+policy:
+  allow_implicit_invocation: true

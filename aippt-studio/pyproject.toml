@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aippt-studio"
+version = "0.1.0"
+description = "Local intake, review, and editable PowerPoint production workbench"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "markitdown[pdf,docx,pptx]>=0.1.3,<1",
+  "pillow>=10,<13",
+  "python-pptx>=1.0.2,<2",
+  "PyMuPDF>=1.24,<2",
+  "PyYAML>=6,<7",
+  "filelock>=3.16,<4",
+  "pydantic>=2.9,<3",
+  "typer>=0.15,<1",
+  "uvicorn>=0.34,<1",
+]
+
+[project.optional-dependencies]
+dev = ["httpx>=0.28,<1", "pytest>=8,<10"]
+
+[project.scripts]
+aippt = "aippt_studio.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aippt_studio"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+[tool.hatch.build.targets.wheel.force-include]
+"integrations/aippt-studio-powerpoint/references/schemas" = "aippt_studio/portable_schemas"
+

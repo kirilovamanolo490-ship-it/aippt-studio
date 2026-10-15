@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "pixelmatch",
+  "version": "7.2.0",
+  "tag": "v7.2.0",
+  "commit": "9faed09302aaecec130b4ce0e8505d5ed5221393",
+  "repository": "https://github.com/mapbox/pixelmatch",
+  "license": "ISC",
+  "files": [
+    {
+      "path": "index.js",
+      "url": "https://raw.githubusercontent.com/mapbox/pixelmatch/9faed09302aaecec130b4ce0e8505d5ed5221393/index.js",
+      "sha256": "52c6026c4916a07548d4ce55090ec4ed918d353e15095406dabc3a8a5135d788"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mapbox/pixelmatch/9faed09302aaecec130b4ce0e8505d5ed5221393/LICENSE",
+      "sha256": "cfec0482fb785fe27e3b368a2d9e84bf7a61b275e83ec582bf288e98cd530bb0"
+    }
+  ],
+  "local_modifications": false,
+  "review": {
+    "scope": "Entire vendored index.js reviewed before execution. Pure in-memory RGBA comparison; no imports, network, filesystem, process execution, eval, or native dependencies.",
+    "algorithm": "YIQ color distance, 3x3 antialiasing detection, checkerboard transparency comparison. Main branch OKLab/window features are not included."
+  }
+}

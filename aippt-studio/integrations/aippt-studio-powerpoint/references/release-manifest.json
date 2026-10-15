@@ -1,0 +1,26 @@
+{
+  "schema": "aippt-portable-skill-release-manifest-v1",
+  "package_name": "aippt-studio-powerpoint",
+  "release_version": "1.2.9",
+  "supported_surfaces": [
+    "chatgpt-powerpoint"
+  ],
+  "entrypoint": "SKILL.md",
+  "contracts": [
+    "aippt-presentation-intent-v1",
+    "aippt-expression-review-v1",
+    "aippt-learning-packet-v1",
+    "aippt-bridge-capabilities-v1",
+    "aippt-guidance-snapshot-v1",
+    "aippt-handoff-bundle-v1"
+  ],
+  "data_boundary": {
+    "includes_local_paths": false,
+    "includes_runtime_or_credentials": false,
+    "includes_client_material": false,
+    "automatic_attachment_transfer": false,
+    "automatic_core_mutation": false
+  },
+  "learning_delivery": "source_report_bundle_only_manual_prepared_or_authorized_evidenced_direct_transmitted",
+  "capability_contract": "aippt-bridge-capabilities-v1"
+}

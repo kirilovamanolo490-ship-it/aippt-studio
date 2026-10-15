@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "11.17.0",
+    "echarts": "6.1.0"
+  }
+}

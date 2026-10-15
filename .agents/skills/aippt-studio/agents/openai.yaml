@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI PPT Studio"
+  short_description: "统一调度项目内 PPT 制作、审阅、QA 与交付流程"
+  default_prompt: "Use $aippt-studio to route this presentation task through the project Work, Studio, Adapter, review, and delivery workflow."
+
+policy:
+  allow_implicit_invocation: true

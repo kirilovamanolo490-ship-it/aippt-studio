@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aippt-studio:schema:aippt-guidance-snapshot:v1",
+  "title": "AIPPT sanitized guidance snapshot v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "snapshot_id",
+    "created_at",
+    "source_workbench",
+    "guidance_revision",
+    "transfer_scope",
+    "authorization",
+    "status",
+    "learned_projection",
+    "rules",
+    "limitations"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aippt-guidance-snapshot-v1"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_workbench": {
+      "const": "aippt-studio"
+    },
+    "guidance_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "description": "Opaque guidance revision; never a file path or receipt location."
+    },
+    "transfer_scope": {
+      "const": "sanitized_active_guidance_only"
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "evidence"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "user_provided_current_task",
+            "authorized_direct_bridge",
+            "not_recorded"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "active_read_only",
+        "no_active_guidance_available"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "maxItems": 512,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "status",
+          "action",
+          "applies_when",
+          "exceptions"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "status": {
+            "const": "active"
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "applies_when": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "exceptions": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      }
+    },
+    "learned_projection": {
+      "enum": [
+        "base_only_requested",
+        "included_verified",
+        "withheld_integrity_not_ready",
+        "withheld_no_generic_projection"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "active_read_only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rules": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "no_active_guidance_available"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rules": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "authorization": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "user_provided_current_task",
+                  "authorized_direct_bridge"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

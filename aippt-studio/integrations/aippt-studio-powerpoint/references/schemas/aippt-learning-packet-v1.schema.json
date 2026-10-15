@@ -1,0 +1,909 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aippt-studio:schema:aippt-learning-packet:v1",
+  "title": "AIPPT learning packet v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "packet_id",
+    "created_at",
+    "source_surface",
+    "claim_provenance",
+    "source_revision",
+    "transfer_scope",
+    "user_authorization",
+    "idempotency_key",
+    "transmission_state",
+    "transmission_evidence",
+    "presentation_intent_ref",
+    "capability_report_ref",
+    "feedback_events",
+    "tool_execution",
+    "artifact_review",
+    "user_acceptance",
+    "unresolved_items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aippt-learning-packet-v1"
+    },
+    "packet_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_surface": {
+      "const": "chatgpt-powerpoint"
+    },
+    "source_revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "revision",
+        "state",
+        "evidence"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "description": "Opaque host identifier; never a local path."
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "unavailable"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "transfer_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "deck_content_embedded",
+        "speaker_notes_embedded",
+        "asset_content_embedded",
+        "raw_conversation_embedded"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "sanitized_structured_summary_only"
+          ]
+        },
+        "deck_content_embedded": {
+          "const": false
+        },
+        "speaker_notes_embedded": {
+          "const": false
+        },
+        "asset_content_embedded": {
+          "const": false
+        },
+        "raw_conversation_embedded": {
+          "const": false
+        }
+      },
+      "description": "The packet itself never embeds a deck, notes, assets, or raw conversation."
+    },
+    "user_authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "scope",
+        "evidence"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "recorded",
+            "not_recorded",
+            "denied"
+          ]
+        },
+        "scope": {
+          "enum": [
+            "structured_summary_only",
+            "not_authorized"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "transmission_state": {
+      "enum": [
+        "prepared_not_transmitted",
+        "transmitted"
+      ]
+    },
+    "presentation_intent_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "expression_review_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "capability_report_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "guidance_snapshot_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshot_id",
+        "guidance_revision",
+        "state"
+      ],
+      "properties": {
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "guidance_revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "state": {
+          "enum": [
+            "supplied_by_user",
+            "not_verified"
+          ]
+        }
+      }
+    },
+    "guidance_dispositions": {
+      "type": "array",
+      "maxItems": 512,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "disposition",
+          "evidence",
+          "note"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "disposition": {
+            "enum": [
+              "applied",
+              "not_applicable",
+              "needs_revision",
+              "not_reviewed"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "maxItems": 32,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "disposition": {
+                  "enum": [
+                    "applied",
+                    "needs_revision"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "evidence": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "feedback_events": {
+      "type": "array",
+      "maxItems": 512,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "kind",
+          "user_observation",
+          "context",
+          "problem",
+          "correction",
+          "verification",
+          "reusability"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "kind": {
+            "enum": [
+              "feedback",
+              "failure",
+              "decision",
+              "observation"
+            ]
+          },
+          "user_observation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000,
+            "description": "Faithful short wording or explicitly marked paraphrase from current-task material."
+          },
+          "context": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "operation",
+              "presentation_form",
+              "scope"
+            ],
+            "properties": {
+              "operation": {
+                "enum": [
+                  "exact_local_revision",
+                  "template_derivative",
+                  "new_composition",
+                  "faithful_reconstruction",
+                  "visual_alternate"
+                ]
+              },
+              "presentation_form": {
+                "enum": [
+                  "formal_government",
+                  "business_report",
+                  "competition_defense",
+                  "academic_defense",
+                  "teaching",
+                  "technical_explanation",
+                  "ceremonial_narrative",
+                  "premium_portfolio",
+                  "other_or_unspecified"
+                ]
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              }
+            }
+          },
+          "problem": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "correction": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "evidence"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "visually_reviewed",
+                  "technically_checked",
+                  "not_checked",
+                  "not_comparable",
+                  "failed"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "maxItems": 32,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                }
+              }
+            }
+          },
+          "reusability": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "applies_when",
+              "exceptions"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "conditional_candidate",
+                  "local_only",
+                  "needs_context",
+                  "rejected"
+                ]
+              },
+              "applies_when": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "exceptions": {
+                "type": "array",
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000
+                }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "verification": {
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "visually_reviewed",
+                        "technically_checked",
+                        "not_comparable",
+                        "failed"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "verification": {
+                  "properties": {
+                    "evidence": {
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "reusability": {
+                  "properties": {
+                    "state": {
+                      "const": "conditional_candidate"
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "verification": {
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "visually_reviewed",
+                        "technically_checked"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "tool_execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "evidence"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "not_reported",
+            "not_attempted",
+            "performed",
+            "failed",
+            "unknown"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "artifact_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "evidence"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "performed",
+            "not_performed",
+            "not_comparable",
+            "unknown"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "user_acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "verification",
+        "evidence"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "not_recorded",
+            "pending_user_review",
+            "accepted_by_user",
+            "rejected_by_user",
+            "not_requested"
+          ]
+        },
+        "verification": {
+          "enum": [
+            "explicit_approval_observed",
+            "user_message_observed",
+            "not_verified",
+            "not_applicable"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000
+      }
+    },
+    "claim_provenance": {
+      "const": "source_report_unverified"
+    },
+    "transmission_evidence": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 512
+      },
+      "description": "Source-side send-attempt evidence only; never a receiver receipt."
+    }
+  },
+  "dependentRequired": {
+    "guidance_snapshot_ref": [
+      "guidance_dispositions"
+    ],
+    "guidance_dispositions": [
+      "guidance_snapshot_ref"
+    ]
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "source_revision": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "observed",
+                  "unavailable"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_revision": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tool_execution": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "performed",
+                  "failed"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "tool_execution": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "artifact_review": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "performed",
+                  "not_comparable"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "artifact_review": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_authorization": {
+            "properties": {
+              "state": {
+                "const": "recorded"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_authorization": {
+            "properties": {
+              "scope": {
+                "const": "structured_summary_only"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_authorization": {
+            "properties": {
+              "state": {
+                "const": "denied"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_authorization": {
+            "properties": {
+              "scope": {
+                "const": "not_authorized"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_authorization": {
+            "properties": {
+              "state": {
+                "const": "not_recorded"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_authorization": {
+            "properties": {
+              "scope": {
+                "const": "not_authorized"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "state": {
+                "const": "accepted_by_user"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "verification": {
+                "const": "explicit_approval_observed"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "state": {
+                "const": "rejected_by_user"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "verification": {
+                "const": "user_message_observed"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "not_recorded",
+                  "pending_user_review"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "verification": {
+                "const": "not_verified"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "state": {
+                "const": "not_requested"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "user_acceptance": {
+            "properties": {
+              "verification": {
+                "const": "not_applicable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "transmission_state": {
+            "const": "prepared_not_transmitted"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "transmission_evidence": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "transmission_state": {
+            "const": "transmitted"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "transmission_evidence": {
+            "minItems": 1
+          },
+          "user_authorization": {
+            "properties": {
+              "state": {
+                "const": "recorded"
+              },
+              "scope": {
+                "const": "structured_summary_only"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

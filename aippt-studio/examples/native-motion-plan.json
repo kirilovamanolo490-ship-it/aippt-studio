@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "replace_existing": false,
+  "effects": [
+    {
+      "slide": 20,
+      "shape": "TASK6_LIGHT",
+      "effect": "fade",
+      "trigger": "onClick",
+      "duration": 0.4
+    },
+    {
+      "slide": 20,
+      "shape": "TASK6_LIGHT",
+      "effect": "motion-right",
+      "trigger": "afterPrevious",
+      "duration": 2.4,
+      "motion_by_x": 0.55
+    },
+    {
+      "slide": 20,
+      "shape": "TASK6_TITLE",
+      "effect": "wipe",
+      "trigger": "withPrevious",
+      "duration": 2.4
+    },
+    {
+      "slide": 20,
+      "shape": "TASK6_LIGHT",
+      "effect": "appear-exit",
+      "trigger": "afterPrevious",
+      "duration": 0.08
+    }
+  ],
+  "carousels": [
+    {
+      "slide": 23,
+      "shapes": ["TASK7_CAROUSEL_01", "TASK7_CAROUSEL_02", "TASK7_CAROUSEL_03", "TASK7_CAROUSEL_04"],
+      "duration": 0.5,
+      "hold_seconds": 1.5,
+      "loops": 2,
+      "return_to_first": true,
+      "start_trigger": "onClick"
+    }
+  ],
+  "morph_links": [
+    {
+      "from_slide": 25,
+      "from_shape": "TASK8_IMAGE_START",
+      "to_slide": 26,
+      "to_shape": "TASK8_IMAGE_END",
+      "identity": "TASK8_IMAGE",
+      "duration": 1.4
+    }
+  ],
+  "transitions": [],
+  "previews": [
+    {"id": "task-06", "slides": [20], "seconds_per_slide": 6},
+    {"id": "task-07", "slides": [23], "seconds_per_slide": 12},
+    {"id": "task-08", "slides": [25, 26], "seconds_per_slide": 5}
+  ]
+}
